@@ -1,0 +1,640 @@
+@charset "utf-8";
+@font-face {
+    font-family: "geoSans";
+    src: url(../fuentes/geo_sans_light/GeosansLight.ttf) format("truetype");
+}
+@font-face {
+	font-family: "TCCM";
+	src:url(../fuentes/TCCM____.ttf) format("truetype");
+}
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background-color: #020419;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+/* ~~ Selectores de elemento/etiqueta ~~ */
+ul, ol, dl { /* Debido a las diferencias existentes entre los navegadores, es recomendable no añadir relleno ni márgenes en las listas. Para lograr coherencia, puede especificar las cantidades deseadas aquí o en los elementos de lista (LI, DT, DD) que contienen. Recuerde que lo que haga aquí se aplicará en cascada en la lista .nav, a no ser que escriba un selector más específico. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* la eliminación del margen superior resuelve un problema que origina que los márgenes escapen del bloque contenedor. El margen inferior restante lo mantendrá separado de los elementos de que le sigan.  */
+	padding-right: 15px;
+	padding-left: 15px; /* la adición de relleno a los lados del elemento dentro de los bloques, en lugar de en los elementos del bloque propiamente dicho, elimina todas las matemáticas de modelo de cuadro. Un bloque anidado con relleno lateral también puede usarse como método alternativo. */
+}
+a img { /* este selector elimina el borde azul predeterminado que se muestra en algunos navegadores alrededor de una imagen cuando está rodeada por un vínculo */
+	border: none;
+}
+/* ~~ La aplicación de estilo a los vínculos del sitio debe permanecer en este orden (incluido el grupo de selectores que crea el efecto hover -paso por encima-). ~~ */
+a:link {
+	color: #42413C;
+	text-decoration: underline; /* a no ser que aplique estilos a los vínculos para que tengan un aspecto muy exclusivo, es recomendable proporcionar subrayados para facilitar una identificación visual rápida */
+}
+a:visited {
+	color: #6E6C64;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* este grupo de selectores proporcionará a un usuario que navegue mediante el teclado la misma experiencia de hover (paso por encima) que experimenta un usuario que emplea un ratón. */
+	text-decoration: none;
+}
+/* ~~ Este contenedor de anchura fija rodea a todas las demás bloques ~~ */
+.container {
+	width: 960px;
+	background-color: #FFFFFF;
+	margin: 0 auto; /* el valor automático de los lados, unido a la anchura, centra el diseño  */
+}
+/* ~~ No se asigna una anchura al encabezado. Se extenderá por toda la anchura del diseño. ~~ */
+
+header {
+	width: 100%;
+	height: 650px;
+	background-image: url(../imagenes/fondoAzul1.jpg);
+	background-repeat: repeat;
+	background-position: center center;
+} 
+
+.headerPpal {
+	width: 100%;
+	height: 130px;
+	background-image: url(../imagenes/fondoAzul1.jpg);
+	background-repeat: repeat;
+	background-position: center center;
+}
+/* CSS del SLIDER */
+#contenedor{
+	width:1100px;
+}
+
+#contenedor li{
+	list-style-image: none;
+}
+
+.preview{
+	height:560px;
+}
+
+.previewIzq{
+	width: 600px;
+	height: 460px;
+	float: left;
+	margin-top: 30px;
+}
+.previewDer{
+	width: 500px;
+	height: 460px;
+	float: right;
+	margin-top: 30px;
+}
+
+.previewDer h2{
+	font-family: "geoSans";
+	color: #FFFFFF;
+	font-weight: lighter;
+	font-size: 50px;
+	margin-top: 20px;
+	text-align: center;
+}
+
+.previewDer h2 a{
+	font-family: "geoSans";
+	color: #FFFFFF;
+	font-weight: lighter;
+	font-size: 50px;
+	text-decoration: none;
+}
+	
+.previewDer p{
+	font-family: "geoSans";
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 20px;
+	text-align: justify;
+	margin-top: 10px;
+	font-style: normal;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.previewDerTexto{
+	padding-top: 0px;
+	border-radius: 5px;
+	background-repeat: repeat;
+	background-image: url(../imagenes/sliderTexto.fw.png);
+}
+
+/* FIN CSS del Slider */
+.contentAlto {
+	width: 100%;
+	//height: 400px;
+	background-color: #EEEEEE;
+}
+
+/* ~~ Este selector agrupado da espacio a las listas del área de .content ~~ */
+.content ul, .content ol {
+	padding: 0 15px 15px 40px; /* este relleno reproduce en espejo el relleno derecho de la regla de encabezados y de párrafo incluida más arriba. El relleno se ha colocado en la parte inferior para que el espacio existente entre otros elementos de la lista y a la izquierda cree la sangría. Estos pueden ajustarse como se desee. */
+}
+
+/* ~~ Los estilos de lista de navegación (pueden eliminarse si opta por usar un menú desplegable predefinido como el de Spry) ~~ */
+ul.nav {
+	list-style: none; /* esto elimina el marcador de lista */
+	border-top: 1px solid #666; /* esto crea el borde superior de los vínculos (los demás se sitúan usando un borde inferior en el LI) */
+	margin-bottom: 15px; /* esto crea el espacio entre la navegación en el contenido situado debajo */
+}
+ul.nav li {
+	border-bottom: 1px solid #666; /* esto crea la separación de los botones  */
+}
+ul.nav a, ul.nav a:visited { /* al agrupar estos selectores, se asegurará de que los vínculos mantengan el aspecto de botón incluso después de haber sido visitados  */
+	padding: 5px 5px 5px 15px;
+	display: block; /* esto asigna propiedades de bloque al vínculo, lo que provoca que llene todo el LI que lo contiene. Esto provoca que toda el área reaccione a un clic de ratón. */
+	width: 160px;  /*esta anchura hace que se pueda hacer clic en todo el botón para IE6. Puede eliminarse si no es necesario proporcionar compatibilidad con IE6. Calcule la anchura adecuada restando el relleno de este vínculo de la anchura del contenedor de barra lateral. */
+	text-decoration: none;
+	background-color: #C6D580;
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* esto cambia el color de fondo y del texto tanto para usuarios que naveguen con ratón como para los que lo hagan con teclado */
+	background-color: #ADB96E;
+	color: #FFF;
+}
+
+/* ~~ El pie de página ~~ */
+footer {
+	background-color: #CCC49F;
+	position: relative;/* esto da a IE6 el parámetro hasLayout para borrar correctamente */
+	clear: both; /* esta propiedad de borrado fuerza a .container a conocer dónde terminan las columnas y a contenerlas */
+	height: 120px;
+	width: 100%;
+	background-image: url(../imagenes/pie.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	padding-left: 0;
+	padding-right: 0;
+	display:none;
+}
+
+/*Compatibilidad con HTML5: define nuevas etiquetas HTML5 como display:block para que los navegadores sepan cómo procesar las etiquetas correctamente. */
+header, section, footer, aside, article, figure {
+	display: block;
+}
+
+.headerCentro{
+	width: 1100px;
+	height: 650px;
+	margin-top: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0px;
+}
+.headerTop{
+	width: 100%;
+	height: 130px;
+	border-bottom: 1px solid #CCCCCC;
+}
+.headerBottom{
+	width: 100%;
+	height: 560px;
+}
+.headerIzq{
+	width: 400px;
+	float: left;
+	margin-bottom: 0px;
+	height: 130px;
+}
+.headerIzq H1{}
+
+.headerIzq img{
+	width: 267px;
+	height: 115px;
+	margin-bottom: 0px;
+	bottom: 0px;
+	margin-top: 5px;
+	}
+	
+.headerDer{
+	width: 700px;
+	height: 130px;
+	float: right;
+}
+
+.headerDer ul{
+	list-style-type: none;
+	/* [disabled]list-style-position: outside; */
+	display: inline;
+	float: right;
+	color: #ffffff;
+	margin-top: 100px;
+}
+.headerDer ul li{
+	display: inline;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.headerDer ul li a{
+	color: #fff;
+	text-decoration: none;
+	text-shadow: 1px 1px #333333;
+}
+.headerDer ul li a:hover{
+	color: #F60;
+}
+
+.contentCentro{
+	width: 1100px;
+	//height: 400px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #EEEEEE;
+	left: 2px;
+	right: 2px;
+        display: none;
+}
+.contentCentro H1{
+	text-align: center;
+	font-family: "geoSans";
+	font-weight: lighter;
+	text-transform: uppercase;
+	color: #333;
+}
+.contentCentro p{
+    	margin-top: 10px;
+	text-align: justify;
+	color: #666666;
+	font-size: 14px;
+}
+
+.contentCentro ul{
+    margin-left: 30px;
+}
+.contentCentro li{
+    list-style-image: url("../imagenes/tick-circle-frame-icon.png"); 
+}
+
+.contentCentro h4{
+    	margin-top: 10px;
+	color: #FF6600;
+	font-size: 16px;
+        
+}
+.contentCentro h4:hover{
+    	margin-top: 10px;
+        color: #666666;
+	font-size: 16px;
+        cursor: pointer;
+}
+
+.contener{
+	border-bottom: 1px solid #CCCCCC;
+	width: 100%;
+	height: 150px;
+}
+
+.contenedorChico{
+	width: 364px;
+	height: 150px;
+	float: left;
+}
+.contenedorChico h2{
+	color: #f60;
+	font-family: "geoSans";
+	font-weight: bolder;
+	font-size: 20px;
+	margin-top: 5px;
+	margin-bottom: 0px;
+        cursor: pointer;
+}
+.contenedorChico a:hover{
+	color: #666666;
+}
+
+.contenedorChico p{
+	margin-top: 10px;
+	text-align: justify;
+	color: #666666;
+	font-size: 14px;
+}
+
+.contentBajo{
+	width: 100%;
+	height: 400px;
+	background-color: #fff;
+}
+
+.contentCentro2{
+	width: 1100px;
+	height: 400px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #fff;
+	left: 2px;
+	right: 2px;
+}
+.contentCentro2 H1{
+	text-align: center;
+	font-family: "geoSans";
+	font-weight: lighter;
+	text-transform: uppercase;
+	color: #333333;
+}
+
+.contenedorChico2{
+	width: 273px;
+	height: 300px;
+	float: left;
+	background-image: url(../imagenes/comillas.fw.png);
+	background-repeat: no-repeat;
+	background-position: 13px top;
+}
+
+.contenedorChico2 p{
+	color: #999999;
+	text-align: justify;
+	margin-top: 35px;
+	font-size: 12px;
+}
+
+
+.footerCentro{
+	margin-left: auto;
+	margin-right: auto;
+	width: 1100px;
+}
+
+.secciones{
+	width: 150px;
+	float: left;
+	margin-top: 20px;
+}
+.secciones ul{
+	list-style-type: none;
+	color: #FFFFFF;
+}
+.secciones ul li{}
+.secciones ul li a{
+	color: #ffffff;
+	text-decoration: none;
+	text-shadow: 1px 1px #333333;
+}
+.secciones ul li a:hover{
+	color: #F60;
+}
+.secciones img{
+	margin-bottom: -6px;
+	margin-right: 5px;
+	margin-left: 5px;
+	
+}
+
+.copy{
+	width: 300px;
+	height: 30px;
+	margin-right: 10px;
+	float: right;
+	bottom: 0px;
+	text-align: right;
+	margin-bottom: 0px;
+	margin-top: 80px;
+}
+.copy p{
+	color: #CCCCCC;
+}
+
+.foto{
+	width: 250px;
+	height: 60px;
+	margin-left: 10px;
+	margin-top: 0px;
+}
+.foto img{
+	margin-right: 10px;
+	float: left;
+}
+.foto h2{
+	color: #FF6600;
+	font-style: normal;
+	font-size: 13px;
+	text-align: left;
+	text-indent: 0px;
+	margin-left: 0px;
+	margin-top: 25px;
+	font-weight: lighter;
+	float: left;
+}
+.clearfloat { /* esta clase puede situarse en una <br /> o div vacÃ­a como elemento final tras la Ãºltima div flotante (dentro de #container) si #footer se elimina o se saca fuera de #container */
+    clear:both;
+    height:0;
+    font-size: 1px;
+    line-height: 0px;
+}
+	
+.pagBaseTexto {
+	width: 100%;
+	margin-top: 20px;
+	/*height: 100%;*/
+	/*background-image: url(../imagenes/fondoAzul1.jpg);
+	background-repeat: repeat-y;
+	background-position: center center;*/
+}
+.pagBaseTextoCentral{
+	width: 1100px;
+	/*height: 100%;*/
+	background-color: #FFF;
+	margin: 0 auto;
+	border-radius: 10px;
+	margin-bottom:10px;
+	padding-top: 0px;
+	padding-bottom: 20px;
+}
+.contenedorGral{
+	background-color:#E4E4E4;
+	}
+	
+.pagBaseTextoCentral h1{
+	text-align: center;
+	font-family: "geoSans";
+	font-weight: lighter;
+	text-transform: uppercase;
+	color: #fff;
+	background-image:url(../imagenes/carbon_fibre.fw.png);
+	background-repeat:repeat;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+}
+
+.pagBaseTextoCentral h2{
+	text-align: left;
+	font-family: "geoSans";
+	font-weight: bolder;
+	text-transform: uppercase;
+	color: #F60;
+	padding-bottom: 0px;
+	margin-bottom: 5px;
+	padding-top: 10px;
+}
+
+.pagBaseTextoCentral p{
+	margin-top: 10px;
+	text-align: justify;
+	color: #333;
+	font-size: 14px;
+	padding-bottom: 0px;
+	padding-top: 10px;
+}
+
+.pagEmpresaImg{
+	width: 500px;
+	height: 320px;
+	float: right;
+	margin-right: 0px;
+	clear: none;
+	margin-top: 30px;
+}
+.letraCap{
+	margin-left: 10px;
+	margin-right: 25px;
+	float: left;
+	margin-top: 0px;
+	width: 40px;
+	height: 100px;
+	margin-bottom: 0px;
+	padding: 0px;
+
+}
+.letraCap p{
+	font-family: "geoSans";
+	font-size: 100px;
+	color: #F60;
+	font-style: normal;
+	font-weight:bolder;
+	text-align: left;
+	vertical-align: 0px;
+	margin: 0px;
+	padding:0px;
+	line-height: normal;
+}
+
+/*NUEVO*/
+.formContacto{
+	width: 260px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 50px;
+	float: left;
+}
+.formContacto h2{
+	font-family: "geoSans";
+	font-size: 18px;
+	font-weight: bolder;
+	text-transform: uppercase;
+	color: #F60;
+	padding-bottom: 0px;
+	margin-bottom: 5px;
+	padding-top: 10px;
+}
+
+.spanChico{
+	color: #222;
+	font-family: "geoSans";
+	font-weight:bolder;
+	font-size: 20px;
+	padding-bottom: 0px;
+	padding-top: 10px;
+	text-align:left;
+	margin: 0;
+}
+
+.cajaContacto{
+	width: 250px;
+	height: 35px;
+	border: 1px solid #CCCCCC;
+	margin-bottom: 2px;
+	margin-top: 2px;
+	background-color: #FFF;
+	font-size: 16px;
+	color: #666;
+	border-radius: 5px;
+}
+
+.mensajeContacto{
+	width: 250px;
+	height: 160px;
+	min-width: 250px;
+	min-height: 160px;
+	max-width: 250px;
+	max-height: 160px;
+	margin-top: 2px;
+	margin-bottom: 1px;
+	border: 1px solid #CCCCCC;
+	background-color: #FFF;
+	font-size: 16px;
+	color: #666;
+	border-radius: 5px;
+}
+.botonContacto{
+	font-family: "geoSans";
+	font-weight: bolder;
+	width: 100px;
+	height: 35px;
+	float: right;
+	margin-top: 1px;
+	font-size: 16px;
+	color: #333;
+}
+.ubicacion{
+	width: 620px;
+	height: 460px;
+	border: 1px solid #CCC;
+}
+.mapaUbicacion{
+	width: 620px;
+	height: 460px;
+	float: right;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right: 50px;
+	margin-left: 20px;
+}
+.mapaUbicacion h2{
+	font-family: "geoSans";
+	font-size:18px;
+	font-weight: bolder;
+	text-transform: uppercase;
+	color: #F60;
+	padding-bottom: 0px;
+	margin-bottom: 5px;
+	padding-top: 10px;
+}
+.ocultoImg{
+	width: 454px;
+	height: 404px;
+	float: right;
+	margin-right: 0px;
+	clear: none;
+	margin-top: 10px;
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
+
+.mensaje2 {
+    width:220px;
+    height:40px;
+    background-image:url(../imagenes/fondoMensaje.fw.png);
+    background-repeat: no-repeat;
+    background-position:left top;
+    float:right;
+    margin-top: -35px;
+    margin-left: 263px;
+    position: absolute;
+    font-size: 11px;
+    font-weight: normal;
+    color: #FFF;
+}
+.mensaje2 p{
+    color: #FFF;
+    margin-top: 4px;
+    margin-left:10px; 
+    font-size: 11px;
+    font-weight: normal;
+}

@@ -1,0 +1,511 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 15-oct-2014, 9:30:47
+    Author     : cristian
+*/
+
+@charset "utf-8";
+@font-face {
+    font-family: "geoSans";
+    src: url(../fuentes/geo_sans_light/GeosansLight.ttf) format("truetype");
+}
+
+.headerCentroGestion{
+	width: 1100px;
+	margin-top: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0px;
+}
+
+.contentGestion{
+	width: 1100px;
+	height: 100%;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #ffffff;
+	left: 2px;
+	right: 2px;
+	padding-top: 10px;
+}
+
+.contentGestion H1{
+	text-align: center;
+	font-family: "geoSans";
+	font-weight: lighter;
+	text-transform: uppercase;
+	color: #333;
+}
+
+.contentGestion p{
+    	margin-top: 10px;
+	text-align: justify;
+	color: #666666;
+	font-size: 14px;
+}
+
+.botones{
+	width: 1080px;
+	height: 60px;
+	background-color: #F60;
+	margin-bottom: 0px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.titBotones h1{
+	width: 700px;
+	float: left;
+	margin-top: 10px;
+	text-align:left;
+	font-family: "geoSans";
+	font-weight: lighter;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.botonDerecha{
+    width: 140px;
+    height: 40px;
+    margin-top: 10px;
+    margin-right: 10px;
+    float: right;
+}
+
+.tbl{
+/*    margin: 0 auto;
+    border: #666666 solid 1px;*/
+	
+	width:90%;
+	border-top:1px solid #e5eff8;
+	border-right:1px solid #e5eff8;
+	border-left: 1px solid #e5eff8;
+	margin:1em auto;
+	border-collapse:collapse;
+}
+
+.tbl p{
+    font-size: 14px;
+    margin-left: 6px;
+    margin-right: 6px;
+    margin-bottom: 4px;
+    margin-top: 4px;
+}
+
+.tbl td{
+    /*margin: 0 auto;
+    border-top: #666666 solid 1px;
+    border-right: #666666 solid 1px;
+    border-left: none;*/
+	
+	margin: 0 auto;
+	color:#678197;
+	border-bottom:1px solid #e5eff8;
+	border-left:1px solid #e5eff8;
+	text-align:left;
+}
+
+thead th {
+	background:#f4f9fe;
+	text-align:center;
+	font:lighter 1.2em/2em "Century Gothic","Trebuchet MS",Arial,Helvetica,sans-serif;
+	color:#66a3d3;
+}
+
+/******FURMULARIOS*******/
+.formulario{
+	width: 700px;
+	height: 300px;
+
+}
+
+#formularioServicio{
+	margin-top: 25px;
+	padding-top: 20px;
+	padding-left: 20px;
+	width: 650px;
+	height: 500px;
+	border: #CCC solid 4px;
+	margin-bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#frmNuevoServicio .lbl{
+	float:left;
+	clear:left;
+}
+
+.areaTexto{
+	width: 600px;
+	max-width: 600px;
+	min-width: 600px;
+	height: 300px;
+	max-height: 300px;
+	min-height: 300px;
+	font-size: 16px;
+	color: #666;
+	margin-bottom: 10px;
+}
+
+.cajaEstandar1 {
+	float: left; 
+	width: 600px;
+	height: 25px;
+	border: 1px solid #CCCCCC;
+	margin-bottom: 2px;
+	margin-top: 10px;
+	background-color: #FFF;
+	font-size: 16px;
+	color: #666;
+}
+
+#imagen{
+	margin-bottom: 10px;
+}
+
+.acceso{
+	margin: 0 auto;
+    width: 300px;
+    height: 200px;
+    border: #C0C0C0 solid 4px;
+	background-color: #ccc;
+}
+
+.formAcceso{
+	width:250px;
+	height: 130px;	
+	margin-left: 20px;
+}
+
+.cajasAcceso{ 
+	width: 170px; 
+   	height: 25px; 
+   	/*padding: 5px 20px 0px 20px;*/ 
+   	margin: 0 0 20px 0;
+   	float: right;
+   	clear: right;
+}
+.acceso h1{
+	margin-top: 0px;
+	text-align: center;
+	font-family: "geoSans";
+	font-weight: lighter;
+	text-transform: uppercase;
+	color: #333;
+	background-color: #F60;
+}
+
+.labelAcceso{
+    margin-top: 10px;
+	text-align: left;
+	font-family: "geoSans";
+	font-weight:bolder;
+	color: #333;
+	font-size: 16px;
+	margin-bottom: 16px;
+	float: left; 
+	clear: left;
+}
+
+.usuario{
+	margin: 0 auto;
+    width: 320px;
+    height: 400px;
+    border: #C0C0C0 solid 4px;
+	background-color: #ccc;
+}
+
+.formUsuario{
+	width:300px;
+	height: 400px;	
+	margin-left: 20px;
+}
+#formularioUsuario{
+	margin-top: 25px;
+	padding-top: 20px;
+	padding-left: 20px;
+	border: #CCC solid 4px;
+	margin-bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+#frmNuevoUsuario{
+
+}
+
+
+.cajaUsuario{
+	width: 250px;
+	height: 25px;
+	/*float: left;*/
+	margin-left: 15px;
+	margin-bottom: 20px;
+	margin-top: 0;
+}
+
+.usuario h1{
+	margin-top: 0px;
+	text-align: center;
+	font-family: "geoSans";
+	font-weight: lighter;
+	text-transform: uppercase;
+	color: #333;
+	background-color: #F60;
+}
+
+.labelUsuario{
+    margin-top: 8px;
+	margin-bottom: 16px;
+	margin-left: 15px;
+	text-align: left;
+	font-family: "geoSans";
+	font-weight:bolder;
+	color: #333;
+	font-size: 16px;
+}
+
+#frmBuscarServicio{
+	width: 450px;
+	height: 50px;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+#frmBuscarUsuario{
+	width: 450px;
+	height: 50px;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+
+.cajaEstandar{ 
+	width: 180px;
+	height: 25px;
+	border: 1px solid #CCCCCC;
+	margin-bottom: 2px;
+	margin-top: 2px;
+	background-color: #FFF;
+	font-size: 16px;
+	color: #666;
+	
+}
+
+.izq{
+	float: left;
+	width: 300px;
+}
+
+.der{
+	width: 300px;
+	float: right;
+}
+
+
+/***********************BOTONES*************************/
+.boton{
+	width: 90px;
+	clear: left;
+	background-color: #666;
+	background-repeat:no-repeat;
+	background-position:right;
+	border: 1px solid #dedede;
+	border-top: 1px solid #eee;
+	border-left: 1px solid #eee;
+	line-height: 130%;
+	font-weight: lighter;
+	color: #fff;
+	padding: 5px 10px 6px 7px;
+	margin-bottom: 5px;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 0;
+	padding-left: 8px;
+}
+
+.boton:hover{
+	background-color: #969696;
+	cursor:pointer;
+}
+
+
+.botonTEditar{
+    background-image:url(../imagenes/pencil_edit.png);
+    background-repeat: no-repeat;
+    background-position: center;
+	background-color:transparent;
+    width: 25px;
+    height: 25px;
+	float: left;
+	margin-bottom: 5px;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 0;
+	border: 1px solid #FFF;
+	border-top: 1px solid #FFF;
+	border-left: 1px solid #FFF;
+}
+
+.botonTEditar:hover{
+	cursor:pointer;
+	background-image:url(../imagenes/pencil_edit_1.fw.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.botonTEliminar{
+    background-image:url(../imagenes/delete_2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+	background-color:transparent;
+    width: 25px;
+    height: 25px;
+	float: left;
+	margin-bottom: 5px;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 0;
+	border: 1px solid #FFF;
+	border-top: 1px solid #FFF;
+	border-left: 1px solid #FFF;
+}
+
+.botonTEliminar:hover{
+	cursor:pointer;
+	background-image:url(../imagenes/delete_3.fw.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.btnNuevo{
+    background-image:url(../imagenes/add-1-icon.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    text-align: right;
+    font-size: 14px;
+    width: 140px;
+    height: 40px;
+	float: right;
+	clear: right;
+	background-color: #666;
+	border: 1px solid #dedede;
+	border-top: 1px solid #eee;
+	border-left: 1px solid #eee;
+	line-height: 130%;
+	font-weight: lighter;
+	color: #fff;
+	padding: 5px 10px 6px 5px;
+	margin-bottom: 5px;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 0;
+}
+
+.btnNuevo:hover{
+	background-color: #969696;
+	cursor:pointer;
+}
+
+.botonUsuario{
+	font-family: "geoSans";
+	font-weight:bolder;
+	margin-bottom: 5px;
+	float: right;
+	clear: right;
+	font-size: 16px;
+}
+
+.botonUsuario:hover{
+	background-color: #969696;
+	cursor:pointer;
+}
+
+.botonAcceso{
+	width: 90px;
+	float: right;
+	clear: right;
+	display: block;
+	background-color: #666;
+	background-image:url(../imagenes/acceso.png);
+	background-repeat:no-repeat;
+	background-position:right;
+	border: 1px solid #dedede;
+	border-top: 1px solid #eee;
+	border-left: 1px solid #eee;
+	line-height: 130%;
+	text-align:left;
+	font-weight: lighter;
+	color: #fff;
+	padding: 5px 10px 6px 7px;
+	margin-bottom: 5px;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 0;
+}
+
+.botonAcceso:hover{
+	background-color: #969696;
+	cursor:pointer;
+}
+
+#btnNuevoServicio{
+	background-image: url(../imagenes/save.fw.png);
+	background-repeat:no-repeat;
+	background-position:left;
+	text-align: right; 
+	width: 100px;
+}
+#reset{
+	background-image: url(../imagenes/delete.fw.png);
+	background-repeat:no-repeat;
+	background-position:left;
+	text-align: right; 
+}
+#regresar{
+	background-image: url(../imagenes/return.fw.png);
+	background-repeat:no-repeat;
+	background-position:left;
+	text-align: right; 
+	width: 100px;
+}
+#btnBuscarServicio{
+	background-image: url(../imagenes/search_lense.png);
+	background-repeat:no-repeat;
+	background-position:left;
+	text-align: right;
+}
+#btnNuevoUsuario{
+	background-image: url(../imagenes/save.fw.png);
+	background-repeat:no-repeat;
+	background-position:left;
+	text-align: right; 
+	width: 100px;
+}
+#btnRestaurar{
+	background-image: url(../imagenes/refresh.png);
+	background-repeat:no-repeat;
+	background-position:left;
+	text-align: right;
+	width: 100px;
+}
+#btnBuscarUsuario{
+	background-image: url(../imagenes/search_lense.png);
+	background-repeat:no-repeat;
+	background-position:left;
+	text-align: right;
+}
+.botonesUs{
+	margin-top: 25px;
+	width: 340px;
+	height: 50px;
+	float: right;
+	clear:right;
+}
+/******************************************************/

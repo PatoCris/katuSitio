@@ -1,0 +1,325 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//ES">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+
+        <title>Katupyry Desarrollos</title>
+        <link href="css/estilo.css" rel="stylesheet" type="text/css">
+
+        <!--Librerias del Slider-->
+        <script type='text/javascript' src="js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="js/jcarousellite_1.0.1.min.js"></script> 
+        <!--MOSTRAR OCULTAR-->
+        <script type="text/javascript" language="javascript" src="js/modulos/global.js"></script>
+        
+        <script>
+            jQuery(function() {
+                jQuery(".galeria").jCarouselLite({
+                    visible: 1,
+                    speed: 800,
+                    auto: 9000,
+                });
+            });
+        </script>
+        <!--##############################################################################################-->
+        <script type="text/javascript">
+            //////////////////// DECLARACIÓN DE VARIABLES /////////////////////
+            var url = "php/servicios/Servicio.php";
+            var tabla = '';
+            var arreglo = new Array();
+            var cantidad;
+
+            $(function() {
+                $(document).on("ready", function() {
+                    $.ajax({
+                        type: 'POST',
+                        data: 'accion=traerServicios',
+                        url: url,
+                        dataType: 'json',
+                        success: function(data) {
+                            arreglo = data;
+                            cantidad = arreglo.length;
+                            cargarTabla();
+                            cargarOcultos();
+                            tabla = '';
+                        },
+                        error: function(jqXHR, textStatus, error) {
+                            alert(jqXHR.responseText);
+                        }
+                    });
+                    return false;
+                });
+});
+                function cargarTabla() {
+                    var clase ="contentCentro";
+                    for (i = 0; i < cantidad; i++){
+                            tabla += '<div class="contenedorChico">' +
+                            '<h2><a onclick="mostrarOcultar('+arreglo[i]['codigo']+','+clase+')">'+arreglo[i]['nombre']+'</a></h2>'+
+                            '</div>';
+                };
+                
+           $("#contentCentro").append(tabla);
+            }
+            
+            function cargarOcultos() {
+                    var clase ="contentCentro";
+                    for (i = 0; i < cantidad; i++){
+                            tabla += '<div class="contentCentro" id="'+arreglo[i]['codigo']+'" style="display: none">' +
+                    '<h4><span style="color: #f60"> <<--</span><a onclick="mostrarOcultar('+arreglo[i]['codigo']+','+clase+')">'+arreglo[i]['nombre']+'</a></h4>'+        
+                    '<p>algooo mas largooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo</p>'+        
+                    '</div>';
+                };
+                
+           $("#contentCentro").append(tabla);
+            }
+            
+        </script>   
+        <!--##############################################################################################-->
+
+    </head>
+
+    <body>
+
+        <header>
+            <div class="headerCentro">
+                <div class="headerTop">
+                    <div class="headerIzq">
+                        <img src="imagenes/logo120.fw.png" width="267" height="115"  alt=""/><!--headerIzq--></div>
+                    <div class="headerDer">
+
+                        <ul>
+                            <li><a href="index.html">HOME</a></li>
+                            <li><a href="index.html#ancla">PRODUCTOS</a></li>
+                            <li><a href="">NOVEDADES</a></li>
+                            <li><a href="empresa.html">LA EMPRESA</a></li>
+                            <li><a href="contacto.html">CONTACTO</a></li>
+                        </ul>
+                        <!--headerDer--></div>
+                    <!--headerTop--></div>
+                <div class="headerBottom">
+                    <!--Slider-->
+                    <div id="contenedor">
+                        <div class="galeria">
+                            <ul>
+                                <li>
+                                    <div class="preview">
+                                        <div class="previewIzq"> 
+                                            <img src="imagenes/codigo.fw.png" width="512" height="429"  alt=""/>
+                                            <!--previewIzq--></div>
+
+                                        <div class="previewDer"> 
+                                            <h2><a href="">Desarrollo de Software</a></h2>
+                                            <div class="previewDerTexto"><p>Desarrollamos soluciones a medida, las cuales permiten integrar satisfactoriamente los procesos de su empresa. Cooperando con su crecimiento.</p>
+                                                <!--previewDerTexto--></div>
+                                            <!--previewDer--></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="preview">
+                                        <div class="previewIzq">
+                                            <img src="imagenes/logistica.jpg" width="550" height="403"  alt=""/>
+                                            <!--previewIzq--></div>
+
+                                        <div class="previewDer"> 
+                                            <h2><a href="">Lógica de negocios</a></h2>
+                                            <div class="previewDerTexto"><p>Brindamos soluciones integrales para satisfacer las necesidades de su empresa indistintamente del ámbito al que pertenezca, agilizando los procesos industriales y de negocio, brindando técnicas y herramientas para conocer los indicadores permitiendo brindar apoyo a las decisiones en todas las áreas de su empresa.</p>
+                                                <!--previewDerTexto--></div>
+                                            <!--previewDer--></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="preview">
+                                        <div class="previewIzq"> 
+                                            <img src="imagenes/TecVang.jpg" width="550" height="370" alt="" />
+                                            <!--previewIzq--></div>
+
+                                        <div class="previewDer"> 
+                                            <h2><a href="">Tecnología de Vanguardia</a></h2>
+                                            <div class="previewDerTexto"><p>Buscamos mejorar la productividad de su empresa aplicando tecnología de vanguardia en el desarrollo, implantación y asesoramiento de sistemas de información.</p>
+                                                <!--previewDerTexto--></div>
+                                            <!--previewDer--></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!--Fin Slider--></div>
+                    <!--headerBottom--></div>
+                <!--headerCentro--></div>
+        </header>
+
+        <div class="contentAlto" id="contentAlto">
+
+            <!--DIV OCULTOS -->
+         <!--   <div class="contentCentro" id="asistBiometrica" style="display: none">
+                <h1>Desarrollo e instalación de sistemas de asistencia con lectores biométricos</h1>
+                <div class="ocultoImg">
+                    <img src="imagenes/lectorBiometrico.jpg" width="454" height="404"  alt=""/>
+                    <!--ocultoImg</div>
+                <p>Con el objetivo de lograr un control confiable de asistencia del personal, surge el Sistema de Asistencia con Lectores Biométricos. La lectura de huella digital presenta a las diferentes empresas y/o instituciones, una propuesta económica y eficaz.
+                    Un lector biométrico es un equipo capaz de procesas huellas dactilares, iris de los ojos, voz humana, rostros y registrarlos en la base de datos.
+                    Con el podrá:</p>
+                <ul>
+                    <li><p>Controlar la asistencia de los empleados.</p></li>
+                    <li><p>Reportes detallados de horas y fechas de entradas y salidas.</p></li>
+                    <li><p>Restringir acceso a instalaciones específicas.</p></li>
+                    <li><p>Tener una base de datos digital de sus empleados.</p></li>
+                    <li><p>Integrar la base de datos de empleados con planilla.</p></li>
+                </ul>
+                <p>Los beneficios son:</p>
+                <ul>
+                    <li><p>Reducción del tiempo de obtención y generación de la información requerida, haciendo uso eficiente del recurso del tiempo.</p></li>
+                    <li><p>Se adapta a los requerimientos de la empresa.</p></li>
+                    <li><p>Captura los datos de los lectores, procesado y almacenamiento.</p></li>
+                    <li><p>Puede utilizarse con cualquier base de datos.</p></li>
+                    <li><p>Ofrece resúmenes estadísticos.</p></li>
+                </ul>
+                <p>Katupyry Desarrollos realiza el desarrollo del sistema de implementación y la instalación de los lectores biométricos en las organizaciones y lo pone a su disposición.</p>
+                <h4> <span style="color: #f60"> <<--</span><a onclick="mostrarOcultar('contentCentro', 'asistBiometrica')" >Regresar a los Servicios</a></h4>
+            </div>
+
+            <div class="contentCentro" id="sistAcademica" style="display: none">
+                <h1>Desarrollo e instalación de Sistemas de Gestion académica – Administrativos y de Educacion a distancia</h1>
+                <div class="ocultoImg">
+                    <img src="imagenes/gestion_academica.jpeg" width="454" height="404"  alt=""/>
+                    <!--ocultoImg</div>
+                <p>Katupyry Desarrollos, ofrece el desarrollo de diferentes sistemas, necesarios para un control organizado y eficiente de organizaciones e instituciones.</p>
+                <p>El sistema de Gestión Académica y Administrativo es creado para automatizar los procesos manuales que se realizan dentro de las instituciones en lo que corresponde a inscripción de alumnos y personal docente, gestión de notas, matriculación y demás actividades correspondientes a la administración estudiantil.
+                    Mientras que el sistema de Educación a Distancia, presenta una estructura totalmente innovadora para videoconferencias. Se realiza la instalación y adaptación de salas de reuniones o salones para conseguir una fluida comunicación entre docentes y alumnos, desde donde se encuentren.</p>
+                <h4> <span style="color: #f60"> <<--</span><a onclick="mostrarOcultar('contentCentro', 'sistAcademica')" >Regresar a los Servicios</a></h4>
+            </div>
+
+            <div class="contentCentro" id="cableadoRedes" style="display: none">
+                <h1>Cableado estructurado de redes cableadas e inalámbricas</h1>
+                <div class="ocultoImg">
+                    <img src="imagenes/cableado.jpg" width="454" height="404"  alt=""/>
+                    <!--ocultoImg</div>
+                <p>En la actualidad es prácticamente imprescindible el uso de internet para el trabajo, y es importante para cualquier empresa su infraestructura de Tecnología de Información para cumplir y superar los objetivos de su negocio y por ende, sus sistemas de información sustentados en los canales de comunicación alámbricos o inalámbricos que juegan un papel preponderante en el transporte adecuado, seguro y ágil de la información entre usuarios.</p>
+                <p>Para que un negocio funcione sin problemas, necesita un cableado de red profesional o una infraestructura de transferencia inalámbrica, con unos equipos fiables que hagan que usted se olvide de su red y se centre en su negocio. Es por ello que Katupyry Desarrollos le brinda el asesoramiento necesario y la instalación del cableado que más se adecúe a su necesidad.</p>
+                <h4> <span style="color: #f60"> <<--</span><a onclick="mostrarOcultar('contentCentro', 'cableadoRedes')" >Regresar a los Servicios</a></h4>
+            </div>
+
+            <div class="contentCentro" id="centroDatos" style="display: none">
+                <h1>Acondicionamiento de centro de datos</h1>
+                <div class="ocultoImg">
+                    <img src="imagenes/centro_datos.jpg" width="454" height="404"  alt=""/>		
+                    <!--ocultoImg</div>
+                <p>Partiendo de que un Centro de Procesamiento de Datos requieren una máxima protección y estabilidad precisa del ambiente para los sofisticados y valiosos equipos de información que resguarda, Katupyry Desarrollos diseña estos espacios dedicados, teniendo en cuenta el grado de eficiencia energética, control de temperatura, humedad, filtración y flujo de aire. Buscando la  protección y prevención para lograr un servicio ininterrumpido y estable, para el máximo desempeño de los equipos involucrados. </p>
+                <p>Puntos básicos a considerarse para que un Centro de Datos sea confiable:</p>
+                <ul>
+                    <li><p>Energía siempre disponible: UPS, Generadores, Baterías y Switches estáticos.</p></li>
+                    <li><p>Control del Ambiente: Temperatura y Humedad, Filtración y Flujo de Aire.</p></li>
+                    <li><p>Seguridad: Protección de incendios, inundaciones e intrusión.</p></li>
+                    <li><p>Monitoreo y Control: Alarmas, Redundancia, Administración de energía.</p></li>
+                </ul>
+                <h4> <span style="color: #f60"> <<--</span><a onclick="mostrarOcultar('contentCentro', 'centroDatos')" >Regresar a los Servicios</a></h4>
+            </div>
+
+            <div class="contentCentro" id="servidores" style="display: none">
+                <h1>Instalación y configuración de servidores</h1>
+                <div class="ocultoImg">
+                    <img src="imagenes/instalacion_servidores.jpg" width="454" height="404"  alt=""/>		<!--ocultoImg</div>
+                <p>Katupyry Desarrollos te proporciona la instalación y configuración de servidores y terminales bajo redes, sin importar el sistema operativo. Realizando las instalaciones de acuerdo a factores claves, como lo son la escalabilidad, el ahorro de energía, la alta disponibilidad y seguridad, un alto rendimiento y Balanceo de carga.</p>
+                <h4> <span style="color: #f60"> <<--</span><a onclick="mostrarOcultar('contentCentro', 'servidores')" >Regresar a los Servicios</a></h4>
+            </div>
+
+            <div class="contentCentro" id="sistemaMedida" style="display: none">
+                <h1>Sistemas a medida</h1>
+                <div class="ocultoImg">
+                    <img src="imagenes/sistema_medida.fw.png" width="454" height="404"  alt=""/>		
+                    <!--ocultoImg</div>
+                <p>Un sistema a medida, es un sistema desarrollado exclusivamente para su empresa, adaptándose a la perfección a las necesidades del negocio, mejorando los procesos y optimizando el uso de cada uno de los recursos intervinientes.</p>
+                <p>Si estas iniciando tu negocio o ya estás establecido como empresa, y queres automatizar las tareas, Katupyry Desarrollo te ofrece el análisis del sistema actual ya sea manual o informatizado, estudia los procesos de cada tarea, analiza los tiempos que lleva concretarlo, y te propone soluciones a tu necesidad. Totalmente a medida.
+                </p>
+                <h4> <span style="color: #f60"> <<--</span><a onclick="mostrarOcultar('contentCentro', 'sistemaMedida')" >Regresar a los Servicios</a></h4>
+            </div>-->
+
+            <!--FIN DIV OCULTOS-->
+            <div class="contentCentro" id="contentCentro" style="display: block">
+                <a name="ancla"></a>
+                <h1> Nuestros Productos y Servicios </h1>
+               <!-- <div class="contener" id="contener">
+                    <div class="contenedorChico" id="contenedorChico">
+                        <h2><a onclick="mostrarOcultar('asistBiometrica', 'contentCentro')" >Asistencia con lectores biométricos</a></h2>
+
+                        <p>Con el objetivo de lograr un control confiable de asistencia del personal, surge el Sistema de Asistencia con Lectores Biométricos...</p>
+                        <!--contenedorChico</div>
+                    <div class="contenedorChico">
+                        <h2><a onclick="mostrarOcultar('sistAcademica', 'contentCentro')" >Sistemas de gestión académica</a></h2>
+                        <p>Katupyry Desarrollos, ofrece el desarrollo de diferentes sistemas, necesarios para un control organizado y eficiente de organizaciones e instituciones...</p>
+                        <!--contenedorChico</div>
+                    <div class="contenedorChico">
+                        <h2><a onclick="mostrarOcultar('cableadoRedes', 'contentCentro')" >Cableado de redes</a></h2>
+                        <p>En la actualidad es prácticamente imprescindible el uso de internet para el trabajo, y es importante para cualquier empresa su infraestructura...</p>
+                        <!--contenedorChico</div>
+                    <!--contener</div>
+                <div class="contenedorChico">
+                    <h2><a onclick="mostrarOcultar('centroDatos', 'contentCentro')" >Acondicionamiento de centro de datos</a></h2>
+                    <p>Partiendo de que un Centro de Procesamiento de Datos requieren una máxima protección y estabilidad precisa del ambiente para los sofisticados...</p>
+                    <!--contenedorChico</div>
+                <div class="contenedorChico">
+                    <h2><a onclick="mostrarOcultar('servidores', 'contentCentro')" >Instalación y configuración de servidores</a></h2>
+                    <p>Katupyry Desarrollos te proporciona la instalación y configuración de servidores y terminales bajo redes, sin importar el sistema operativo....</p>
+                    <!--contenedorChico</div>
+                <div class="contenedorChico">
+                    <h2><a onclick="mostrarOcultar('sistemaMedida', 'contentCentro')" >Sistemas a medida</a></h2>
+                    <p>Un sistema a medida, es un sistema desarrollado exclusivamente para su empresa, adaptándose a la perfección a las necesidades del negocio...</p>
+                    <!--contenedorChico</div>-->
+                <!--contentCentro--></div>
+
+            <div class="clearfloat">
+                <br>
+                <!--clearfloat--></div> 
+
+            <!-- contentAlto --></div>
+
+        <!--<div class="contentBajo"> 
+            <div class="contentCentro2">
+            <h1> TESTIMONIOS </h1>
+                <div class="contenedorChico2">
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci...</p>
+                <div class="foto">
+                <img src="imagenes/testm1.fw.png" width="60" height="60"  alt=""/>
+                <h2>Nombre y Apellido</h2>
+        <!--foto</div>
+        <!--contenedorChic</div>
+          <div class="contenedorChico2">
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci...</p>
+          <div class="foto">
+          <img src="imagenes/testm2.fw.png" width="60" height="60"  alt=""/>
+          <h2>Nombre y Apellido</h2>
+        <!--foto</div>
+        <!--contenedorChico</div>
+        <div class="contenedorChico2">
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci...</p>
+        <div class="foto">
+        <img src="imagenes/testm3.fw.png" width="60" height="60"  alt=""/>
+        <h2>Nombre y Apellido</h2>
+        <!--foto</div>
+        <!--contenedorChico</div>
+        <div class="contenedorChico2">
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci...</p>
+        <div class="foto">
+        <img src="imagenes/testm4.fw.png" width="60" height="60"  alt=""/>
+        <h2>Nombre y Apellido</h2>
+        <!--foto</div>
+        <!--contenedorChico</div>
+        <!--contentCentro2</div>
+        <!--contentBajo</div>-->
+
+        <footer>
+            <div class="footerCentro">
+                <div class="secciones">
+                    <ul>
+                        <li><a href=""><img src="imagenes/facebook-icon1.fw.png" width="24" height="24"  alt=""/>Facebook </a></li>
+                        <li><a href=""><img src="imagenes/twitter-icon.png" width="24" height="24"  alt=""/>Twitter</a></li>
+                    </ul>
+                    <!--secciones--></div>
+                <div class="copy">
+                    <p>Katupyry Desarrollos © 2014</p>
+                    <!--copy--></div>
+                <!--footerCentro--></div>
+        </footer>
+
+    </body>
+</html>

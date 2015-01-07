@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//ES">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+
+<title>Katupyry Desarrollos</title>
+<link href="css/estilo.css" rel="stylesheet" type="text/css"><!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!--Librerias del Slider-->
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js' type='text/javascript'></script>
+<script type="text/javascript" src="js/jcarousellite_1.0.1.min.js"></script> 
+<script>
+	jQuery(function() {
+	jQuery(".galeria").jCarouselLite({
+	visible: 1,
+	speed: 800,
+	auto: 9000,
+	});
+	});
+</script>
+<script>var __adobewebfontsappname__="dreamweaver"</script>
+<script src="http://use.edgefonts.net/dancing-script:n4:default.js" type="text/javascript"></script>
+
+<!--///////////VALIDACION DE FORMULARIO////////////-->
+<script type="text/javascript" src="js/jquery.validate.js"></script>
+<script type="text/javascript" src="js/additional-methods.js"></script>
+<script type="text/javascript">
+$(function() {
+	// validate the comment form when it is submitted
+	$("#contacto").validate({
+		rules: {
+			nombre: "required",
+                        telefono: "required",
+                        email: {
+                            required: true,
+                            email: true
+                        },
+                        mensaje: "required"
+
+		},
+		messages: {
+			nombre: '<div class="mensaje2"><p>Por favor ingrese su nombre.</p></div>',
+                        telefono: '<div class="mensaje2"><p>Por favor ingrese su telefono.</p></div>',
+                        email: '<div class="mensaje2"><p>Por favor ingrese un email válido.</p></div>',
+                        mensaje: '<div class="mensaje2"><p>Por favor ingrese su mensaje.</p></div>'
+
+		}
+	});
+});
+</script>
+<!--///////////FIN VALIDACION DE FORMULARIO////////////-->
+</head>
+
+<body>
+<div class="contenedorGral">
+<div class = "headerPpal">
+	<div class="headerCentro">
+    <div class="headerTop">
+    <div class="headerIzq">
+<img src="imagenes/logo120.fw.png" width="267" height="115"  alt=""/><!--headerIzq--></div>
+    <div class="headerDer">
+  
+    <ul>
+    	<li><a href="index.html">HOME</a></li>
+        <li><a href="index.html#ancla">PRODUCTOS</a></li>
+        <li><a href="">NOVEDADES</a></li>
+        <li><a href="empresa.html">LA EMPRESA</a></li>
+        <li><a href="contacto.html">CONTACTO</a></li>
+    </ul>
+    <!--headerDer--></div>
+    <!--headerTop--></div>
+    <!--headerCentro--></div>
+<!--headerPpal--></div>
+
+ <div class="pagBaseTexto">
+ <div class="pagBaseTextoCentral">
+<h1>CONTACTO</h1>
+ <div class="formContacto">
+    <h2>Formulario de Contacto</h2>
+    <form method="post" action="php/enviarCorreo.php" name="contacto" id="contacto">
+    <p class=" spanChico">Nombre:</p>
+    <input type="text" name="nombre" id="nombre" class="cajaContacto">
+	<p class=" spanChico">Teléfono:</p>
+        <input type="text" name="telefono" id="telefono" class="cajaContacto">
+    <p class=" spanChico">Correo:</p>
+    <input type="text" name="email" id="email" class="cajaContacto">
+    <p class=" spanChico">Mensaje:</p>
+    <textarea name="mensaje" id="mensaje" class="mensajeContacto"></textarea>
+    <input type="submit" value="Enviar" class="botonContacto">
+    <br>
+    </form>
+    <!--end formContacto--></div>
+    <div class="mapaUbicacion">
+    <h2>Ubicación</h2>
+    <div class="ubicacion">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3543.1405385770795!2d-55.8954116!3d-27.371326000000003!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9457be358ae3aebb%3A0x96fff82e12454ce3!2sCol%C3%B3n+2277%2C+Posadas%2C+Misiones!5e0!3m2!1ses!2sar!4v1412946040545" width="620" height="460" frameborder="0" style="border:0"></iframe>
+    <!--end ubicacion--></div>
+    <!--end mapaUbicacion--></div>
+<div class="clearfloat">
+  <br>
+<!--clearfloat--></div>  
+<!--pagBaseTextoCentral--></div>
+<!--pagBaseTexto--></div>
+ 
+<div class="clearfloat">
+  <br>
+<!--clearfloat--></div>  
+<!--contenedorGral--></div>  
+  <footer>
+  <div class="footerCentro">
+  <div class="secciones">
+  <ul>
+        <li><a href=""><img src="imagenes/facebook-icon1.fw.png" width="24" height="24"  alt=""/>Facebook </a></li>
+        <li><a href=""><img src="imagenes/twitter-icon.png" width="24" height="24"  alt=""/>Twitter</a></li>
+  </ul>
+  <!--secciones--></div>
+  <div class="copy">
+  <p>Katupyry Desarrollos © 2014</p>
+  <!--copy--></div>
+  <!--footerCentro--></div>
+  </footer>
+  
+
+</body>
+</html>
