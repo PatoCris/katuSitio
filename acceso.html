@@ -10,16 +10,22 @@
         <script type="text/javascript" src="js/additional-methods.js"></script>
 
 </head>
-<body>
+<body class="bodyAcceso">
+
+    
 <div class="acceso">
 <H1>Iniciar Sesión</H1>
 <form class="formAcceso" id="formAcceso" action="php/ComprobarUsuario.php" method="post">
+    <div class="labels">
             <label class="labelAcceso">Usuario:</label>
+            <label class="labelAcceso">Contraseña:</label>
+    </div>
+    <div class="cajasBoton">
             <input class="cajasAcceso" type="text" name="usuario" />
             <br>
-            <label class="labelAcceso">Contraseña:</label>
             <input class="cajasAcceso" type="password" name="clave" />
             <input type="submit" class="botonAcceso" name="enviar" value="Ingresar" />
+    </div>
 </form>        
 <!--acceso--></div>
     
