@@ -13,7 +13,6 @@
         <script type="text/javascript" language="javascript" src="js/modulos/global.js"></script>
         <link href="css/estilo.css" rel="stylesheet" type="text/css">
         <link href="css/estiloSistema.css" rel="stylesheet" type="text/css">
-
         <script type="text/javascript">
             //////////////////// DECLARACIÓN DE VARIABLES /////////////////////
             var url = "php/servicios/Noticia.php";
@@ -25,7 +24,7 @@
                 $(document).on("ready", function() {
                     $.ajax({
                         type: 'POST',
-                        data: 'accion=traerNoticia',
+                        data: 'accion=traerNoticias',
                         url: url,
                         dataType: 'json',
                         success: function(data) {
@@ -41,17 +40,16 @@
                     return false;
                 });
 
-                ///////////////////////// NUEVO SERVICIO /////////////////////////    
+                ///////////////////////// NUEVO NOTICIA /////////////////////////    
                 $("#btnNuevaNoticia").click(function() {
-                    try {  
+                    try {
                         var formData = new FormData($("#frmNuevaNoticia")[0]);
-                        var message = "";
                         var nombre = "";
                         var contenido = "";
                         nombre = document.getElementById("nombre").value;
                         contenido = document.getElementById("contenido").value;
                         var imagen = document.getElementById("imagen").value;
-                        if(nombre.length < 1 || descripcion.length < 1 || imagen === ""){
+                        if(nombre.length < 1 || contenido.length < 1 || imagen === ""){
                             throw new Error('Todos los campos son obligatorios');
                         }
                         //hacemos la petición ajax  
@@ -64,14 +62,14 @@
                             contentType: false,
                             processData: false,
                             //mientras enviamos el archivo
-
+                            
                             success: function(data) {
                                 $("#errores").append(data);
                                 arreglo = data;
                                 cantidad = arreglo.length;
                                 cargarTabla();
                                 tabla = '';
-                                mostrarOcultar('tablaNoticias', 'formularioNoticia');
+                                mostrarOcultar('tablaNoticia', 'formularioNoticia');
                             },
                             error: function(jqXHR, textStatus, error) {
                                 $("#errores").append(jqXHR.responseText);
@@ -119,7 +117,7 @@
             //////////////////////// EDITAR NOTICIA //////////////////////////
             function editarNoticia(codigo) {
                 $("#nombre").val(arreglo[codigo]['nombre']);
-                $("#contenido").append(arreglo[codigo]['contenido']);
+                $("#contenido").append(arreglo[codigo]['cuerpo']);
                 $("#codigo").val(arreglo[codigo]['codigo']);
                 $("#imagen").val('');
                 mostrarOcultar('formularioNoticia', 'tablaNoticia');
@@ -142,7 +140,7 @@
                     $.ajax({
                         type: 'POST',
                         url: url,
-                        data: 'accion=eliminarC&codigo=' + codigo,
+                        data: 'accion=eliminarNoticia&codigo=' + codigo,
                         success: function(data) {
                             arreglo = data;
                             cantidad = arreglo.length;
@@ -158,15 +156,15 @@
             function cargarTabla() {
                 $('.remove').remove();
                 for (i = 0; i < cantidad; i++) {
-                    descripcionCompleta = arreglo[i]['contenido'];
+                    descripcionCompleta = arreglo[i]['cuerpo'];
                     descripcion = descripcionCompleta.substring(0,30)+'...';
                     tabla += '<tr class="remove">' +
                             '<td><p>' + arreglo[i]['nombre'] + '</p></td>' +
                             '<td><p>' + arreglo[i]['fecha'] + '</p></td>' +
                             '<td><p>' + arreglo[i]['usuario'] + '</p></td>' +
                             '<td><p>' + descripcion + '</p></td>' +
-                            '<td><p><button onclick="editarServicio(\'' + i + '\')" class="botonTEditar"></button> ' +
-                            ' <button onclick="eliminarServicio(\'' + arreglo[i]['codigo'] + '\')" class="botonTEliminar"></button></td>' +
+                            '<td><p><button onclick="editarNoticia(\'' + i + '\')" class="botonTEditar"></button> ' +
+                            ' <button onclick="eliminarNoticia(\'' + arreglo[i]['codigo'] + '\')" class="botonTEliminar"></button></td>' +
                             '</tr>';
                 }
                 ;
@@ -192,7 +190,7 @@
         <div class="contentGestion">
             <div class="botones" id="botones">
                 <div class="titBotones">
-	                <h1>GESTIÓN DE NOTICIAS</h1>
+	                <h1>GESTIÓN DE NOTICIA</h1>
                 </div>
                 <div class="botonDerecha">
                     <input type="button" class="btnNuevo" value="Nueva Noticia" onclick="mostrarOcultar('formularioNoticia', 'tablaNoticia'), limpiarText()">
@@ -205,7 +203,7 @@
                     <input type="text" name="nombre" id="nombre" class="cajaEstandar1"><br>
                     <label for="contenido" class="lbl">Contenido:</label><br><br>
                     <textarea name="contenido" id="contenido" cols="72" rows="18"></textarea><br>
-                    <input type="hidden" name="accion" id="accion" value="nuevoServicio">
+                    <input type="hidden" name="accion" id="accion" value="nuevaNoticia">
                     <input type="hidden" name="codigo" id="codigo" value="">
                     <!--SELECCIONAR IMAGEN-->
                     <input type="file" name="imagen" id="imagen"><br>
@@ -224,7 +222,7 @@
                     <input type="button" name="btnBuscarNoticia" id="btnBuscarNoticia" class="boton" value="Buscar">
                     <input type="button" name="btnRestaurar" id="btnRestaurar" class="boton" value="Restaurar">
                 </form>
-                <table class="tbl" id="tblServicios">
+                <table class="tbl" id="tblNoticias">
                     <thead>
                         <tr>
                             <th>Nombre</th>
