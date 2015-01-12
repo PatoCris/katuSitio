@@ -1,9 +1,8 @@
 <?php
-    session_start();
-    if(empty($_SESSION['usuario'])) {
-        include_once './acceso.html';
-    }else{
-        
+//    session_start();
+//    if(empty($_SESSION['usuario'])) {
+//        include_once './acceso.html';
+//    }else{ 
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//ES">
 <html>
@@ -14,7 +13,6 @@
         <script type="text/javascript" language="javascript" src="js/modulos/global.js"></script>
         <link href="css/estilo.css" rel="stylesheet" type="text/css">
         <link href="css/estiloSistema.css" rel="stylesheet" type="text/css">
-
         <script type="text/javascript">
             //////////////////// DECLARACIÓN DE VARIABLES /////////////////////
             var url = "php/servicios/Servicio.php";
@@ -246,5 +244,5 @@
     </body>
 </html>
 <?PHP
-    }
+//    }
 ?>

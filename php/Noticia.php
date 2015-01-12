@@ -99,7 +99,7 @@ class Noticia {
        $consulta->execute();
        $registro = $consulta->fetch();
        if($registro){
-          return new self($registro['nombre'], $registro['cuerpo'], $registro['fecha'], $registro['usuario'], $registro['ImagenMiniatura'], $registro['codigo']);
+          return new self($registro['nombre'], $registro['cuerpo'], $registro['fecha'], $registro['usuario'], $registro['imagenMiniatura'], $registro['codigo']);
        }else{
           return false;
        }

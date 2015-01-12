@@ -24,8 +24,8 @@ switch ($accion) {
         if (!empty($codigo)) { 
             $noticiaEdit = Noticia::buscarNoticia($codigo); 
             if(!empty($_FILES['imagen']['name'])){
-                $ic = "imagen_chica/".$noticiaEdit->getImagen();
-                $ig = "imagen_grande/".$noticiaEdit->getImagen();
+                $ic = "imagen_chica/".$noticiaEdit->getImagenMiniatura();
+                $ig = "imagen_grande/".$noticiaEdit->getImagenMiniatura();
                 unlink($ic);
                 unlink($ig);
                 /////////////////////IMAGEN/////////////////////////
@@ -49,7 +49,7 @@ switch ($accion) {
                 $noticia = new Noticia($nombre, $descripcion, $fecha, $usuario, $imagen, $codigo);
                 $noticia->guardarNoticia();
             }else{
-                $noticia = new Noticia($nombre, $descripcion, $fecha, $usuario, $noticiaEdit->getImagen(), $codigo);
+                $noticia = new Noticia($nombre, $descripcion, $fecha, $usuario, $noticiaEdit->getImagenMiniatura(), $codigo);
                 $noticia->guardarNoticia();
             }
 
@@ -71,7 +71,7 @@ switch ($accion) {
             if ($tam[0] > 550 OR $tam[1] > 550) {
                 cambiartam($imagen_grande, $imagen_grande, 550, 550);
             }
-            $noticia = new Noticia($nombre, $cuerpo, $fecha, $usuario, $imagenMiniatura, $codigo);
+            $noticia = new Noticia($nombre, $descripcion, $fecha, $usuario, $imagen);
             $noticia->guardarNoticia();
             
         }
@@ -82,7 +82,7 @@ switch ($accion) {
         Noticia::borrarNoticia($codigo);
         listaNoticia();
         break;
-    case "traerNoticia":
+    case "traerNoticias":
         listaNoticia();
         break;
     case "buscarNoticia":
@@ -92,4 +92,3 @@ switch ($accion) {
         break;
 }
 ?>
-
