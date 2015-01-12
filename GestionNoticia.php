@@ -7,7 +7,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//ES">
 <html>
     <head>
-        <title>Gestión de Servicios - Katupyry Desarrollos SRL</title>
+        <title>Gestión de Noticias - Katupyry Desarrollos SRL</title>
         <meta charset="UTF-8">
         <script type='text/javascript' src="js/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" language="javascript" src="js/modulos/global.js"></script>
@@ -192,7 +192,7 @@
         <div class="contentGestion">
             <div class="botones" id="botones">
                 <div class="titBotones">
-	                <h1>GESTIÓN DE SERVICIOS</h1>
+	                <h1>GESTIÓN DE NOTICIAS</h1>
                 </div>
                 <div class="botonDerecha">
                     <input type="button" class="btnNuevo" value="Nueva Noticia" onclick="mostrarOcultar('formularioNoticia', 'tablaNoticia'), limpiarText()">

@@ -145,7 +145,7 @@
                             '<td><p>' + arreglo[i]['nombreUsuario'] + '</p></td>' +
                             '<td><p>' + arreglo[i]['correo'] + '</p></td>' +
                             '<td><p><button onclick="editarUsuario(\'' + i + '\')" class="botonTEditar"></button> ' +
-                            ' <button onclick="eliminarUsuario(\'' + arreglo[i]['codigo'] + '\')" class="botonTEliminar"></button></td>' +
+                            '<button onclick="eliminarUsuario(\'' + arreglo[i]['codigo'] + '\')" class="botonTEliminar"></button></td>' +
                             '</tr>';
                 }
                 ;

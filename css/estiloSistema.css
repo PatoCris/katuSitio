@@ -139,12 +139,27 @@ thead th {
 	margin-left: auto;
 	margin-right: auto;
 }
+#formularioNoticia{
+    margin-top: 25px;
+	padding-top: 20px;
+	padding-left: 20px;
+	width: 650px;
+	height: 500px;
+	border: #CCC solid 4px;
+	margin-bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 #frmNuevoServicio .lbl{
 	float:left;
 	clear:left;
 }
 
+#frmNuevaNoticia .lbl{
+    float:left;
+    clear:left;
+}
 .areaTexto{
 	width: 600px;
 	max-width: 600px;
@@ -290,6 +305,13 @@ thead th {
 	height: 50px;
 	margin-top: 20px;
 	margin-left: 20px;
+}
+#frmBuscarNoticia{
+    width: 450px;
+	height: 50px;
+	margin-top: 20px;
+	margin-left: 20px;
+    
 }
 
 #frmBuscarUsuario{
@@ -501,6 +523,19 @@ thead th {
 	background-position:left;
 	text-align: right; 
 	width: 100px;
+}
+#btnNuevaNoticia{
+    background-image: url(../imagenes/save.fw.png);
+	background-repeat:no-repeat;
+	background-position:left;
+	text-align: right; 
+	width: 100px;
+}
+#btnBuscarNoticia{
+    background-image: url(../imagenes/search_lense.png);
+	background-repeat:no-repeat;
+	background-position:left;
+	text-align: right;
 }
 #btnRestaurar{
 	background-image: url(../imagenes/refresh.png);
