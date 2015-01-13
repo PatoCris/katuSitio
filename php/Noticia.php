@@ -70,14 +70,16 @@ class Noticia {
             $consulta->bindParam(':nombre', $this->nombre);
             $consulta->bindParam(':cuerpo', $this->cuerpo);
             $consulta->bindParam(':fecha', $this->fecha);
+            $consulta->bindParam(':usuario', $this->usuario);
             $consulta->bindParam(':imagenMiniatura', $this->imagenMiniatura);
             $consulta->bindParam(':codigo', $this->codigo);
             $consulta->execute();
         }else /*Nuevo Objeto*/{
-            $consulta = $conexion->prepare('INSERT INTO ' . self::TABLA .' (nombre, cuerpo, fecha, imagenMiniatura) VALUES (:nombre, :cuerpo, :fecha, :imagenMiniatura)');
+            $consulta = $conexion->prepare('INSERT INTO ' . self::TABLA .' (nombre, cuerpo, fecha, usuario, imagenMiniatura) VALUES (:nombre, :cuerpo, :fecha, :usuario, :imagenMiniatura)');
             $consulta->bindParam(':nombre', $this->nombre);
             $consulta->bindParam(':cuerpo', $this->cuerpo);
             $consulta->bindParam(':fecha', $this->fecha);
+            $consulta->bindParam(':usuario', $this->usuario);
             $consulta->bindParam(':imagenMiniatura', $this->imagenMiniatura);
             $consulta->execute();
             $this->codigo = $conexion->lastInsertId();

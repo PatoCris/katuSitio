@@ -190,7 +190,7 @@
         <div class="contentGestion">
             <div class="botones" id="botones">
                 <div class="titBotones">
-	                <h1>GESTIÓN DE NOTICIA</h1>
+	                <h1>GESTIÓN DE NOTICIAS</h1>
                 </div>
                 <div class="botonDerecha">
                     <input type="button" class="btnNuevo" value="Nueva Noticia" onclick="mostrarOcultar('formularioNoticia', 'tablaNoticia'), limpiarText()">

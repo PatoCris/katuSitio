@@ -10,7 +10,7 @@
         <meta charset="UTF-8">
         <link href="css/estilo.css" rel="stylesheet" type="text/css">
         <link href="css/estiloSistema.css" rel="stylesheet" type="text/css">
-        <script type='text/javascript' src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script type='text/javascript' src="js/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" language="javascript" src="js/modulos/global.js"></script>
         <script type="text/javascript" src="js/jquery.validate.js"></script>
         <script type="text/javascript" src="js/additional-methods.js"></script>
@@ -123,12 +123,14 @@
                     $.ajax({
                         type: 'POST',
                         url: url,
-                        data: 'accion=eliminarUsuario&codigo=' + codigo,
+                        data: 'accion=eliminarUsuario&codigo='+codigo,
                         success: function(data) {
                             arreglo = data;
                             cantidad = arreglo.length;
                             cargarTabla();
+                            alert("entro");
                             tabla = '';
+                            
                         }
                  
                     });
@@ -190,7 +192,7 @@
                     <label class="labelUsuario">Usuario: </label>
                     <input type="text" class="cajaUsuario" name="nombreUsuario" id="nombreUsuario">
                     <label class="labelUsuario">Nivel: </label>
-                    <select id="nivel" class="cajaUsuario" name="nivel" id="nivel" size=1> 
+                    <select id="nivel" class="cajaUsuario" name="nivel"> 
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -238,7 +240,7 @@
                         </tr>
                     </thead>
                     <tbody id="bodyTabla">
-
+                    <tr class="remove">
                     </tbody>
                 </table>
             </div>
