@@ -1,5 +1,4 @@
 <?php
-
 header('Content-type: application/json');
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
@@ -71,7 +70,7 @@ switch ($accion) {
             if ($tam[0] > 550 OR $tam[1] > 550) {
                 cambiartam($imagen_grande, $imagen_grande, 550, 550);
             }
-            $servicio = new Servicio($nombre, $descripcion, $fecha, $usuario, $imagen, $codigo);
+            $servicio = new Servicio($nombre, $descripcion, $fecha, $usuario, $imagen);
             $servicio->guardarServicio();
         }
         listaServicio();    
